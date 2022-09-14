@@ -264,7 +264,7 @@ class CallHandler(val acs: AccessibilityService) {
         try {
             val packageManager = acs.getPackageManager()
             acs.startActivity(packageManager.getLaunchIntentForPackage(packageName)
-                    .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                    ?.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
             return true
         } catch (e: Exception) {
             return false
